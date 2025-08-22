@@ -1,0 +1,42 @@
+.sidebar {
+  width: 220px;
+  background: #0e0f29;
+  padding: 20px;
+  color: white;
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #1c1e3a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #2a2d52;
+}
+
+.count {
+  background: #2a2d52;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.more {
+  color: #00bfff;
+  cursor: pointer;
+}

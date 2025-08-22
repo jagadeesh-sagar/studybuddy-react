@@ -1,0 +1,35 @@
+.room-card {
+  background: #1c1e3a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: white;
+  transition: 0.2s;
+}
+
+.room-card:hover {
+  background: #2a2d52;
+}
+
+.room-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.room-info .host {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.room-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.topic {
+  background: #2a2d52;
+  padding: 3px 8px;
+  border-radius: 5px;
+}

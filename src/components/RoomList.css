@@ -1,0 +1,25 @@
+.room-list {
+  flex: 1;
+  padding: 20px;
+  color: white;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-room-btn {
+  background: #00bfff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.create-room-btn:hover {
+  background: #0099cc;
+}

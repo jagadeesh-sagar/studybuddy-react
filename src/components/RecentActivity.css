@@ -1,0 +1,31 @@
+.recent-activity {
+  width: 250px;
+  background: #0e0f29;
+  padding: 20px;
+  color: white;
+}
+
+.recent-activity h3 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.recent-activity ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-activity li {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.user {
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.room {
+  color: #ccc;
+}
