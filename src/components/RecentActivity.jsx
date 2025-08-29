@@ -5,22 +5,34 @@ const RecentActivity = () => {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/activities/") // 🔹 replace with your API
-      .then((res) => res.json())
-      .then((data) => setActivities(data))
-      .catch((err) => console.error("Error fetching activities:", err));
+    const fetchrooms = async () => {
+      try {
+        const res = await fetch("http://13.234.124.118/room/message/"); // 🔹 replace with your API
+        const data = await res.json();
+        setActivities(data);
+      } catch (err) {
+        console.error("Error fetching topics:", err);
+      }
+    };
+
+    fetchrooms();
   }, []);
 
   return (
     <aside className="recent-activity">
       <h3>Recent Activity</h3>
       <ul>
-        {activities.map((a, i) => (
-          <li key={i}>
-            <span className="user">{a.user}</span> {a.action}{" "}
-            <span className="room">{a.room}</span>
-          </li>
-        ))}
+        {activities.map(
+          (a, i) => (
+            console.log(a),
+            (
+              <li key={i}>
+                <span className="user">{a.user.username}</span> {a.body}{" "}
+                <span className="room">{a.room_name}</span>
+              </li>
+            )
+          )
+        )}
       </ul>
     </aside>
   );

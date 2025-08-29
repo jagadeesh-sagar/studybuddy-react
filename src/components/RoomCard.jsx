@@ -11,7 +11,7 @@ const RoomCard = ({ title, host, members, topic }) => {
       </div>
       <div className="room-footer">
         <span className="topic">{topic}</span>
-        <span className="members">{members} members</span>
+        <span className="members"> members</span>
       </div>
     </div>
   );

@@ -2,15 +2,30 @@ import { useEffect, useState } from "react";
 import RoomCard from "./RoomCard";
 import "./RoomList.css";
 
-const RoomList = () => {
+const RoomList = ({ endpoint, queryendpoint }) => {
   const [rooms, setRooms] = useState([]);
+  const defaultEndpoint = "http://13.234.124.118/room/";
+  let apiEndpoint = defaultEndpoint; // Default to the base URL
+
+  if (queryendpoint) {
+    apiEndpoint = `http://13.234.124.118/room/?q=${queryendpoint}`;
+    console.log("this is real");
+  } else if (endpoint) {
+    apiEndpoint = endpoint;
+  }
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/rooms/") // 🔹 replace with your API
-      .then((res) => res.json())
-      .then((data) => setRooms(data))
-      .catch((err) => console.error("Error fetching rooms:", err));
-  }, []);
+    const fetchrooms = async () => {
+      try {
+        const res = await fetch(apiEndpoint); // 🔹 replace with your API
+        const data = await res.json();
+        setRooms(data);
+      } catch (err) {
+        console.log("error jaggu;", err);
+      }
+    };
+    fetchrooms();
+  }, [apiEndpoint]);
 
   return (
     <div className="room-list">
@@ -20,12 +35,13 @@ const RoomList = () => {
       </div>
 
       {rooms.map((room) => (
+        // console.log(room.user.username),
         <RoomCard
           key={room.id}
-          title={room.title}
-          host={room.host}
-          members={room.members}
-          topic={room.topic}
+          title={room.name}
+          host={room.user.username}
+          members={room.participants}
+          topic={room.topic.topic}
         />
       ))}
     </div>
